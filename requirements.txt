@@ -1,0 +1,7 @@
+python-dotenv
+llama-index
+langchain-anthropic
+langchain-openai
+langchain-core
+magika
+streamlit
