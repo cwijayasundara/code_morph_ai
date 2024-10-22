@@ -1,3 +1,4 @@
+
 code_explain_prompt = """
 You are tasked with analyzing a complex legacy PLSQL codebase to generate an English explanation of its business rules 
 and logic. This analysis will be used to create requirements documents for redesigning the system in a modern language 
@@ -58,6 +59,8 @@ Remember to focus on extracting the business logic and rules, rather than provid
 Your analysis should help developers understand the core functionality and business requirements implemented in this 
 PLSQL code, facilitating its redesign in a modern language.
 
+Please also output the word *END* at the end of your response to indicate completion.
+
 """
 
 java_code_gen_prompt = """
@@ -117,6 +120,8 @@ documentation using Swagger or Spring REST Docs.
 Your final output should include multiple Java files representing the different components of the microservices 
 architecture, along with a brief explanation of how the code is organized and how it implements the DDD concepts.
 
+Please also output the word *END* at the end of your response to indicate completion.
+
 """
 
 oo_design_prompt = """
@@ -169,5 +174,7 @@ Present the Mermaid diagram code within <mermaid> tags.
 Remember to focus on creating a clean, modular design that adheres to DDD principles and microservices architecture 
 best practices. Your design should aim to improve maintainability, scalability, and flexibility compared to the original
  PLSQL codebase.
+ 
+Please also output the word *END* at the end of your response to indicate completion.
 
 """

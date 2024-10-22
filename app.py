@@ -10,13 +10,13 @@ _ = load_dotenv()
 
 code_dir_name = "./code"
 
-llm_anthropic = ChatAnthropic(model="claude-3-5-sonnet-20240620", temparature=0.1)
+llm_anthropic = ChatAnthropic(model="claude-3-5-sonnet-20240620", temperature=0.1)
 
-llm_openai = ChatOpenAI(model="gpt-4o",temparature=0.1)
+llm_openai = ChatOpenAI(model="gpt-4o",temperature=0.1)
 
-llm_openai_mini = ChatOpenAI(model="gpt-4o-mini", temparature=0.1)
+llm_openai_mini = ChatOpenAI(model="gpt-4o-mini", temperature=0.1)
 
-llm_openai_o1 = ChatOpenAI(model="o1-preview", temparature=1.0)
+llm_openai_o1 = ChatOpenAI(model="o1-preview", temperature=1.0)
 
 code_index, code_text, file_content = extract_code(code_dir_name)
 
@@ -97,6 +97,7 @@ elif add_radio == "/command_interface":
 elif add_radio == "/explain":
     st.title("/explain")
     for file in file_content:
+        print("content of the file is: ", file)
         response = execute(llm, code_explain_prompt, file)
         st.write(response)
 

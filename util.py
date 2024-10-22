@@ -45,3 +45,9 @@ def get_code_prompt(question, code_index, code_text):
     """
 
     return prompt
+
+# test
+# repo_dir = "./code"
+# code_index, code_text, file_content = extract_code(repo_dir)
+# for file in file_content:
+#     print(file)
