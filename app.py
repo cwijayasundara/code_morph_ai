@@ -10,13 +10,15 @@ _ = load_dotenv()
 
 code_dir_name = "./code"
 
-llm_anthropic = ChatAnthropic(model="claude-3-5-sonnet-20240620", temperature=0.1)
+llm_anthropic = ChatAnthropic(model="claude-3-5-sonnet-20241022", temperature=0.1)
 
 llm_openai = ChatOpenAI(model="gpt-4o",temperature=0.1)
 
 llm_openai_mini = ChatOpenAI(model="gpt-4o-mini", temperature=0.1)
 
 llm_openai_o1 = ChatOpenAI(model="o1-preview", temperature=1.0)
+
+llm_openai_o1_mini = ChatOpenAI(model="o1-mini", temperature=1.0)
 
 code_index, code_text, file_content = extract_code(code_dir_name)
 
@@ -44,6 +46,7 @@ with st.sidebar:
         ("/openai_gpt_4o_mini",
          "/openai_gpt_4o",
          "/openai_o1_preview",
+         "/openai_o1_mini",
          "/claude_3.5_sonnet")
     )
 
@@ -55,6 +58,8 @@ with st.sidebar:
         st.write("Selected Language Model:", llm.model_name)
     elif select_llm == "/openai_o1_preview":
         llm = llm_openai_o1
+    elif select_llm == "/openai_o1_mini":
+        llm = llm_openai_o1_mini
         st.write("Selected Language Model:", llm.model_name)
     elif select_llm == "/claude_3.5_sonnet":
         llm = llm_anthropic

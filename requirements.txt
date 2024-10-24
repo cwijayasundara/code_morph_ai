@@ -1,8 +1,9 @@
 python-dotenv
-llama-index
 langchain-anthropic
 langchain-openai
 langchain-core
 magika
 streamlit
 langchain
+tiktoken
+anthropic==0.37.1
